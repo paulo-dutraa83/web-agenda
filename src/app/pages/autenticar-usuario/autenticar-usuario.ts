@@ -36,8 +36,8 @@ export class AutenticarUsuario {
     this.http.post('http://localhost:8082/api/v1/usuario/autenticar', this.formulario.value)
       .subscribe({
         next: (data) => { //Capturando a resposta de sucesso
-          console.log(data); //Exibindo os dados no console
-          alert('Sucesso! Voce  será redirecionado para a agenda"'); //Provisorio.
+          sessionStorage.setItem("usuario", JSON.stringify(data)); //Salvando os dados do usuario autenticado em uma sessão
+          location.href = '/pages/dashboard'; //Redirecionando para a pagina do dashboard
         },
         error: (e) => { //Capturando a resposta de erro
           this.mensagemErro.set(e.error); //Exibindo a mensagem de erro
