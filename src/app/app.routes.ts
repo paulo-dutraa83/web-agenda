@@ -3,6 +3,9 @@ import { AutenticarUsuario } from './pages/autenticar-usuario/autenticar-usuario
 import { CadastrarUsuario } from './pages/cadastrar-usuario/cadastrar-usuario';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { AuthGuard } from './guards/auth.guard';
+import { CadastrarCategoria } from './pages/cadastrar-categoria/cadastrar-categoria';
+import { ConsultarCategoria } from './pages/consultar-categoria/consultar-categoria';
+import { EditarCategoria } from './pages/editar-categoria/editar-categoria';
 
 export const routes: Routes = [
     {
@@ -16,6 +19,21 @@ export const routes: Routes = [
      {
         path: "pages/dashboard", //Rota de navegação
         component: Dashboard, //classe do componente
+        canActivate: [AuthGuard] //Aplicando o guardião
+    },
+    {
+        path: "pages/cadastrar-categoria", //Rota de navegação
+        component: CadastrarCategoria, //classe do componente
+        canActivate: [AuthGuard] //Aplicando o guardião
+    },
+    {
+        path: "pages/consultar-categoria", //Rota de navegação
+        component: ConsultarCategoria, //classe do componente
+        canActivate: [AuthGuard] //Aplicando o guardião
+    },
+    {
+        path: "pages/editar-categoria", //Rota de navegação
+        component: EditarCategoria, //classe do componente
         canActivate: [AuthGuard] //Aplicando o guardião
     },
     {
