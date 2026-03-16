@@ -32,7 +32,7 @@ export const routes: Routes = [
         canActivate: [AuthGuard] //Aplicando o guardião
     },
     {
-        path: "pages/editar-categoria", //Rota de navegação
+        path: "pages/editar-categoria/:id", //Rota de navegação, jogando o id da categoria no navegador
         component: EditarCategoria, //classe do componente
         canActivate: [AuthGuard] //Aplicando o guardião
     },
